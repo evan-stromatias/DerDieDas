@@ -1,0 +1,470 @@
+<Button>:
+    font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+    font_size: "30dp"
+
+<Label>:
+    font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+
+<MenuScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: " "
+        Label:
+            font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+            text: "Der Die Das"
+            font_size: "120dp"
+        Label:
+            text: " "
+        BoxLayout:
+            Button:
+                text: 'Noun genders'
+                on_press: 
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'noun_gender'
+            Button:
+                text: 'Noun plural'
+                on_press:
+                    root.manager.transition.direction = 'left' 
+                    root.manager.current = 'noun_plural'
+            Button:
+                text: 'Noun translation'
+                on_press:
+                    root.manager.transition.direction = 'left' 
+                    root.manager.current = 'noun_translate'
+            # Button:
+            #     text: 'Noun accent'
+            #     on_press: root.manager.current = 'settings'
+        Button:
+            text: 'Stats'
+            on_press: 
+                root.manager.transition.direction = 'left' 
+                root.manager.current = 'stats'
+        Button:
+            text: 'Settings'
+            on_press: root.manager.current = 'settings'
+        Button:
+            id: btnExit
+            text: 'Quit'
+            on_press: app.stop() 
+
+<StatsScreen>:
+    BoxLayout:
+        orientation: "vertical"
+
+        Label:
+            font_size: "60dp"
+            text: 'Gender Stats'
+        BoxLayout:
+            orientation: "horizontal"
+            BoxLayout:
+                orientation: "vertical"
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderNounStatsCorrect0
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderNounStatsCorrect0Times
+                        text: ' '
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderNounStatsCorrect1
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderNounStatsCorrect1Times
+                        text: ' '
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderNounStatsCorrect2
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderNounStatsCorrect2Times
+                        text: ' '
+            BoxLayout:
+                orientation: "vertical"
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderNounStatsIncorrect0
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderNounStatsIncorrect0Times
+                        text: ' '
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderNounStatsIncorrect1
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderNounStatsIncorrect1Times
+                        text: ' '
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderNounStatsIncorrect2
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderNounStatsIncorrect2Times
+                        text: ' '
+        Label:
+            font_size: "60dp"
+            text: 'Plural Stats'
+        BoxLayout:
+            orientation: "horizontal"
+            BoxLayout:
+                orientation: "vertical"
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderPluralStatsCorrect0
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderPluralStatsCorrect0Times
+                        text: ' '
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderPluralStatsCorrect1
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderPluralStatsCorrect1Times
+                        text: ' '
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderPluralStatsCorrect2
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderPluralStatsCorrect2Times
+                        text: ' '
+            BoxLayout:
+                orientation: "vertical"
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderPluralStatsIncorrect0
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderPluralStatsIncorrect0Times
+                        text: ' '
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderPluralStatsIncorrect1
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderPluralStatsIncorrect1Times
+                        text: ' '
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderPluralStatsIncorrect2
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderPluralStatsIncorrect2Times
+                        text: ' '
+        Label:
+            font_size: "60dp"
+            text: 'Translation Stats'
+        BoxLayout:
+            orientation: "horizontal"
+            BoxLayout:
+                orientation: "vertical"
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderTransStatsCorrect0
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderTransStatsCorrect0Times
+                        text: ' '
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderTransStatsCorrect1
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderTransStatsCorrect1Times
+                        text: ' '
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderTransStatsCorrect2
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 0,1,0,1
+                        id: GenderTransStatsCorrect2Times
+                        text: ' '
+            BoxLayout:
+                orientation: "vertical"
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderTransStatsIncorrect0
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderTransStatsIncorrect0Times
+                        text: ' '
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderTransStatsIncorrect1
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderTransStatsIncorrect1Times
+                        text: ' '
+                BoxLayout:
+                    orientation: "horizontal"
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderTransStatsIncorrect2
+                        text: ' '
+                    Label:
+                        font_size: "30dp"
+                        color: 1,0,0,1
+                        id: GenderTransStatsIncorrect2Times
+                        text: ' '
+
+
+
+
+        Button:
+            text: 'Back to menu'
+            on_press: 
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'menu'
+
+<SettingsScreen>:
+    BoxLayout:
+        Button:
+            text: 'My settings button'
+        Button:
+            text: 'Back to menu'
+            on_press: root.manager.current = 'menu'
+
+<NounGenderScreen>:                    
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+            text: root.my_text
+            font_size: "80dp"
+            # size_hint: .5, None
+            # pos_hint: {"center_x": .5}
+        Label:
+            font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+            text: root.translation
+            font_size: "30dp"
+            size_hint: .5, .5
+            pos_hint: {"center_x": .5}
+            color: 0,1,1,1
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+                text: root.correct_answers
+                font_size: "25dp"
+                color: 0,1,0,1
+                # size_hint: .5, None
+                pos_hint: {"center_x": .5}
+            Label:
+                font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+                text: root.incorrect_answers
+                font_size: "25dp"
+                color: 1,0,0,1
+                # size_hint: .5, None
+                pos_hint: {"center_x": .5}
+        BoxLayout:
+            orientation: "horizontal"
+            Button:
+                id: Der
+                text: "Der"
+                on_press: root.on_button_click(Der)
+            Button:
+                id: Die
+                text: "Die"
+                on_press: root.on_button_click(Die)
+            Button:
+                id: Das
+                text: "Das"
+                on_press: root.on_button_click(Das)
+        BoxLayout:
+            Button:
+                text: "Back"
+                on_press: 
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'menu'
+
+<NounPluralScreen>:                    
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+            text: root.my_text
+            font_size: "80dp"
+            # size_hint: .5, None
+            # pos_hint: {"center_x": .5}
+        Label:
+            font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+            text: root.my_text_plural
+            font_size: "80dp"
+            # size_hint: .5, None
+            # pos_hint: {"center_x": .5}
+        Label:
+            font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+            text: root.translation
+            font_size: "30dp"
+            size_hint: .5, .5
+            pos_hint: {"center_x": .5}
+            color: 0,1,1,1
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+                text: root.correct_answers
+                font_size: "25dp"
+                color: 0,1,0,1
+                # size_hint: .5, None
+                pos_hint: {"center_x": .5}
+            Label:
+                font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+                text: root.incorrect_answers
+                font_size: "25dp"
+                color: 1,0,0,1
+                # size_hint: .5, None
+                pos_hint: {"center_x": .5}
+        BoxLayout:
+            id: PluralButtons
+            orientation: "horizontal"
+            Button:
+                id: FirstPlural
+                on_press: root.on_button_click(FirstPlural)
+            Button:
+                id: SecondPlural
+                on_press: root.on_button_click(SecondPlural)
+            Button:
+                id: ThirdPlural
+                on_press: root.on_button_click(ThirdPlural)
+        BoxLayout:
+            id: Nav
+            Button:
+                text: "Back"
+                on_press: 
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'menu'
+
+<NounTranslateScreen>:                    
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+            text: root.my_text
+            font_size: "80dp"
+            # size_hint: .5, None
+            # pos_hint: {"center_x": .5}
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+                text: root.correct_answers
+                font_size: "25dp"
+                color: 0,1,0,1
+                # size_hint: .5, None
+                pos_hint: {"center_x": .5}
+            Label:
+                font_name: "assets/fonts/amatic/AmaticSC-Regular.ttf"
+                text: root.incorrect_answers
+                font_size: "25dp"
+                color: 1,0,0,1
+                # size_hint: .5, None
+                pos_hint: {"center_x": .5}
+        BoxLayout:
+            id: PluralButtons
+            orientation: "horizontal"
+            Button:
+                id: First
+                on_press: root.on_button_click(First)
+            Button:
+                id: Second
+                on_press: root.on_button_click(Second)
+            Button:
+                id: Third
+                on_press: root.on_button_click(Third)
+        BoxLayout:
+            id: Nav
+            Button:
+                text: "Back"
+                on_press: 
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'menu'
