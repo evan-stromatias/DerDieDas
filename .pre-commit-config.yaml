@@ -1,0 +1,17 @@
+default_language_version:
+  python: python3.12
+
+repos:
+  - repo: https://github.com/ambv/black
+    rev: 24.3.0
+    hooks:
+      - id: black
+        types: [python]
+        args: [ --preview ]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.3.3
+    hooks:
+      - id: ruff
+        args: [ "--fix", "--select", "F403", "--quiet"]
+        types: [python]

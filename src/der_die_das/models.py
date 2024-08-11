@@ -1,18 +1,14 @@
-from typing import List
-from typing import Optional
-from enum import StrEnum
+from typing import List, Optional
 
 from sqlalchemy import ForeignKey
-from sqlalchemy import String, Enum, Column
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
-class Base(DeclarativeBase):
+
+class BaseDbModel(DeclarativeBase):
     pass
 
-class GermanNouns(Base):
+
+class GermanNouns(BaseDbModel):
     __tablename__ = "german_nouns"
     id: Mapped[int] = mapped_column(primary_key=True)
     gender: Mapped[str]
@@ -20,18 +16,21 @@ class GermanNouns(Base):
     plural: Mapped[Optional[str]]
     translation: Mapped[str]
 
-    german_nouns_gender_answers: Mapped[Optional[List["GermanNounsGenderStats"]]] = relationship(back_populates="german_noun")
-    german_nouns_plural_answers: Mapped[Optional[List["GermanNounsPluralStats"]]] = relationship(back_populates="german_noun")
-    german_nouns_translation_answers: Mapped[Optional[List["GermanNounsTranslationStats"]]] = relationship(back_populates="german_noun")
+    german_nouns_gender_answers: Mapped[Optional[List["GermanNounsGenderStats"]]] = relationship(
+        back_populates="german_noun"
+    )
+    german_nouns_plural_answers: Mapped[Optional[List["GermanNounsPluralStats"]]] = relationship(
+        back_populates="german_noun"
+    )
+    german_nouns_translation_answers: Mapped[Optional[List["GermanNounsTranslationStats"]]] = relationship(
+        back_populates="german_noun"
+    )
 
     def __repr__(self) -> str:
         return f"GermanNouns(id={self.id!r}, gender={self.gender!r}, noun={self.noun!r}, plural={self.plural!r}, translation={self.translation!r})"
 
-class GermanNounsGenderAsnwer(StrEnum):
-    CORRECT = "CORRECT"
-    INCORRECT = "INCORRECT"
 
-class GermanNounsGenderStats(Base):
+class GermanNounsGenderStats(BaseDbModel):
     __tablename__ = "german_nouns_gender_stats"
     id: Mapped[int] = mapped_column(primary_key=True)
     nouns_id: Mapped[int] = mapped_column(ForeignKey("german_nouns.id"))
@@ -41,7 +40,8 @@ class GermanNounsGenderStats(Base):
     def __repr__(self) -> str:
         return f"GermanNounsGenderStats(id={self.id!r}, is_correct={self.is_correct!r}, nouns_id={self.nouns_id!r}, german_noun={self.german_noun!r})"
 
-class GermanNounsPluralStats(Base):
+
+class GermanNounsPluralStats(BaseDbModel):
     __tablename__ = "german_nouns_plural_stats"
     id: Mapped[int] = mapped_column(primary_key=True)
     nouns_id: Mapped[int] = mapped_column(ForeignKey("german_nouns.id"))
@@ -51,7 +51,8 @@ class GermanNounsPluralStats(Base):
     def __repr__(self) -> str:
         return f"GermanNounsPluralStats(id={self.id!r}, is_correct={self.is_correct!r}, nouns_id={self.nouns_id!r}, german_noun={self.german_noun!r})"
 
-class GermanNounsTranslationStats(Base):
+
+class GermanNounsTranslationStats(BaseDbModel):
     __tablename__ = "german_nouns_translation_stats"
     id: Mapped[int] = mapped_column(primary_key=True)
     nouns_id: Mapped[int] = mapped_column(ForeignKey("german_nouns.id"))

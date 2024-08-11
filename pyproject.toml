@@ -1,28 +1,71 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "der_die_das"
+[tool.poetry]
+name = "der-die-das"
 version = "0.1.0"
-authors = [
-  { name="Example Author", email="author@example.com" },
-]
-description = ""
+description = "A Kivy app to practice the German nouns"
+authors = ["Evan"]
 readme = "README.md"
-requires-python = ">=3.11"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
+include = [
+    { path = "data" },
+    { path = "assets" },
 ]
 
-dependencies=[
-  "kivy[full]",
-  "gtts",
-  "sqlalchemy",
-  "PyPDF2",
-  "python-docx",
-  "py-trans",
-  "aiofiles",
+[tool.poetry.dependencies]
+python = "^3.12"
+kivy = {extras = ["full"], version = "^2.3.0"}
+gtts = "^2.5.2"
+sqlalchemy = "^2.0.32"
+# pypdf2 = "^3.0.1"
+# python-docx = "^1.1.2"
+# py-trans = "^0.6.1"
+# aiofiles = "^24.1.0"
+tqdm = "^4.66.5"
+
+[tool.poetry.group.dev.dependencies]
+black = "==24.3.0"
+ruff = "==0.3.3"
+pre-commit = "^3.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+line_length = 120
+profile = "black"
+
+[tool.black]
+skip-string-normalization = true
+line-length = 120
+
+[tool.ruff]
+# Same as Black.
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors (settings from FastAPI, thanks, @tiangolo!)
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
 ]
+ignore = [
+    "E501",  # line too long, handled by black
+    "C901",  # too complex
+    "F403",
+]
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.isort]
+order-by-type = true
+relative-imports-order = "closest-to-furthest"
+extra-standard-library = ["typing"]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+known-first-party = []
+
+[tool.poetry.scripts]
+derdiedas = 'der_die_das.derdiedas:main'
+derdiedas_db = 'der_die_das.db_fill_data:cli'

@@ -1,0 +1,167 @@
+<Button>:
+    font_size: "30dp"
+
+<DerDieDasTitle@Label>
+    id: DerDieDasTitle
+    font_size: "120dp"
+
+<DerDieDasBoxLayout@BoxLayout>:
+    orientation: "vertical"
+    Label:
+        text: " "
+    DerDieDasImage:
+        size: self.texture_size
+    DerDieDasTitle:
+        text: "Der Die Das"
+    Label:
+        text: " "
+
+
+<MenuScreen>:
+    DerDieDasBoxLayout:
+        BoxLayout:
+            Button:
+                text: 'Noun genders'
+                on_press: 
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'game_noun_gender'
+            Button:
+                text: 'Noun plural'
+                on_press:
+                    root.manager.transition.direction = 'left' 
+                    root.manager.current = 'game_noun_plural'
+            Button:
+                text: 'Noun translation'
+                on_press:
+                    root.manager.transition.direction = 'left' 
+                    root.manager.current = 'game_noun_translate'
+        Button:
+            text: 'Stats'
+            on_press: 
+                root.manager.transition.direction = 'left' 
+                root.manager.current = 'stats'
+        Button:
+            text: 'Settings'
+            on_press: 
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'settings'
+        Button:
+            id: btnExit
+            text: 'Quit'
+            on_press: app.stop() 
+
+<NounGamesBaseScreen,NounGenderScreen,NounPluralScreen,NounTranslateScreen>:                    
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: root.question_text
+            font_size: "80dp"
+        Label:
+            text: root.translation
+            font_size: "30dp"
+            size_hint: .5, .5
+            pos_hint: {"center_x": .5}
+            color: 0,1,1,1
+        BoxLayout:
+            orientation: "horizontal"
+            Label:
+                text: root.correct_answers_counter
+                font_size: "25dp"
+                color: 0,1,0,1
+                pos_hint: {"center_x": .5}
+            Label:
+                text: root.incorrect_answers_counter
+                font_size: "25dp"
+                color: 1,0,0,1
+                pos_hint: {"center_x": .5}
+        BoxLayout:
+            orientation: "horizontal"
+            Button:
+                id: Button1
+                text: ""
+                on_press: root.on_button_click(Button1)
+            Button:
+                id: Button2
+                text: ""
+                on_press: root.on_button_click(Button2)
+            Button:
+                id: Button3
+                text: ""
+                on_press: root.on_button_click(Button3)
+        BoxLayout:
+            Button:
+                text: "Back"
+                on_press: 
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'menu'
+
+<StatsScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: " "
+        DerDieDasImage:
+            size: self.texture_size
+        Label:
+            text: "Player Statistics"
+            font_size: "120dp"
+        Label:
+            font_size: "80dp"
+            text: " "
+        BoxLayout:
+            Button:
+                text: 'Gender'
+                on_press: 
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'stats_gender'
+            Button:
+                text: 'Plural'
+                on_press:
+                    root.manager.transition.direction = 'left' 
+                    root.manager.current = 'stats_plural'
+            Button:
+                text: 'Translation'
+                on_press:
+                    root.manager.transition.direction = 'left' 
+                    root.manager.current = 'stats_translation'
+
+        Button:
+            text: 'Back to menu'
+            on_press: 
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'menu'
+
+<StatsNounBaseScreen,StatsGenderScreen,StatsPluralScreen,StatsTranslationScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            orientation: "horizontal"
+            BoxLayout:
+                id: correct
+                orientation: "vertical"
+            BoxLayout:
+                id: incorrect
+                orientation: "vertical"
+        Button:
+            size_hint: 1.0, 0.2
+            text: 'Back to stats'
+            on_press: 
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'stats'
+
+<SettingsScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: "Settings"
+            font_size: "120dp"
+        BoxLayout:
+            orientation: "vertical"
+            Button:
+                text: 'Drop user stats'
+                on_press: root.on_button_click_drop_stats()
+            Button:
+                text: 'Back to menu'
+                on_press: 
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'menu'
