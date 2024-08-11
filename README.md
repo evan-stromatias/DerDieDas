@@ -4,7 +4,7 @@
   <img src="src/der_die_das/assets/images/demo.gif" />
 </p>
 
-The `Der Die Das` is a [Kivy](https://kivy.org/) desktop app to help practice the German noun genders.
+The `Der Die Das` is a [Kivy](https://kivy.org/) desktop app to practice the German nouns (gender, plural, translation, etc).
 
 ## 🔍 Prerequisites 
 
