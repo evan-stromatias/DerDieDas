@@ -3,9 +3,9 @@ from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 from kivy.uix.widget import Widget
 
-from der_die_das.db import db
-from der_die_das.db_fill_data import BaseDbModel
-from der_die_das.models import GermanNounsGenderStats, GermanNounsPluralStats, GermanNounsTranslationStats
+from der_die_das.database.db_instance import db
+from der_die_das.database.db_fill_data import BaseDbModel
+from der_die_das.database.models import GermanNounsGenderStats, GermanNounsPluralStats, GermanNounsTranslationStats
 
 
 class StatsNounBaseScreen(Screen):

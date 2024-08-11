@@ -5,8 +5,8 @@ from sqlalchemy import create_engine, desc, func, select
 from sqlalchemy.orm import Session
 
 from der_die_das import CSV_FILE_NAME, DATA_ROOT_DIR_NAME, DERDIEDAS_TEMP_DIR
-from der_die_das.db_fill_data import init_db
-from der_die_das.models import (
+from der_die_das.database.db_fill_data import init_db
+from der_die_das.database.models import (
     GermanNouns,
     GermanNounsGenderStats,
     GermanNounsPluralStats,

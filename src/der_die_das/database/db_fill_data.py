@@ -9,7 +9,7 @@ from sqlalchemy import Engine, create_engine
 from sqlalchemy.orm import Session
 
 from der_die_das import DATA_ROOT_DIR_NAME, DB_FILE_NAME, DERDIEDAS_DB_PATH, DERDIEDAS_DIR, DERDIEDAS_TEMP_DIR, PRJ_BASE
-from der_die_das.models import *  # noqa
+from der_die_das.database.models import *  # noqa
 
 DATA_ROOT = PRJ_BASE / DATA_ROOT_DIR_NAME
 DATA_CSV_FILE = "all_chapters.csv"

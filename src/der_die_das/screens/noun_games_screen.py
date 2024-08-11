@@ -3,8 +3,13 @@ import random
 from kivy.properties import StringProperty
 from kivy.uix.screenmanager import Screen
 
-from der_die_das.db import db
-from der_die_das.models import BaseDbModel, GermanNounsGenderStats, GermanNounsPluralStats, GermanNounsTranslationStats
+from der_die_das.database.db_instance import db
+from der_die_das.database.models import (
+    BaseDbModel,
+    GermanNounsGenderStats,
+    GermanNounsPluralStats,
+    GermanNounsTranslationStats,
+)
 from der_die_das.utils import generate_text_to_kivy_sound
 
 

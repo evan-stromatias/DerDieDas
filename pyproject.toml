@@ -14,10 +14,6 @@ python = "^3.12"
 kivy = {extras = ["full"], version = "^2.3.0"}
 gtts = "^2.5.2"
 sqlalchemy = "^2.0.32"
-# pypdf2 = "^3.0.1"
-# python-docx = "^1.1.2"
-# py-trans = "^0.6.1"
-# aiofiles = "^24.1.0"
 tqdm = "^4.66.5"
 
 [tool.poetry.group.dev.dependencies]
@@ -68,4 +64,4 @@ known-first-party = []
 
 [tool.poetry.scripts]
 derdiedas = 'der_die_das.derdiedas:main'
-derdiedas_db = 'der_die_das.db_fill_data:cli'
+derdiedas_db = 'der_die_das.database.db_fill_data:cli'

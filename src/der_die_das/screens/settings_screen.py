@@ -1,7 +1,7 @@
 from kivy import Logger
 from kivy.uix.screenmanager import Screen
 
-from der_die_das.db import db
+from der_die_das.database.db_instance import db
 
 
 class SettingsScreen(Screen):

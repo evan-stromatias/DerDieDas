@@ -4,9 +4,7 @@
   <img src="src/der_die_das/assets/images/demo.gif" />
 </p>
 
-<p align="center">
 The `Der Die Das` is a [Kivy](https://kivy.org/) desktop app to help practice the German noun genders.
-</p>
 
 ## 🔍 Prerequisites 
 
@@ -66,6 +64,10 @@ then you can load the `csv` data to the database by running:
 poetry run derdiedas_db -c PATH/TO/YOUR/CSV/FILE.csv
 ```
 
+Alternatively:
+```
+derdiedas_db -c PATH/TO/YOUR/CSV/FILE.csv
+```
 
 # 🤌🏻 Future work
 - Port to Android
