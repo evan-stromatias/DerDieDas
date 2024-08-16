@@ -9,9 +9,23 @@ The `Der Die Das` is a [Kivy](https://kivy.org/) desktop app to practice the Ger
 ## 🔍 Prerequisites 
 
 - [Python 3.12](https://www.python.org/downloads/release/python-3125/)
-- [Poetry](https://python-poetry.org/)
+- (Optional) [Poetry](https://python-poetry.org/)
 
 ## 👟 Running
+
+### Without using Poetry
+
+```
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+```
+Finally you may run the `Der Die Das` app by executing:
+```
+derdiedas
+```
+
+### Build & install using Poetry
 Build the Python project by running: 
 
 ```
@@ -64,7 +78,7 @@ then you can load the `csv` data to the database by running:
 poetry run derdiedas_db -c PATH/TO/YOUR/CSV/FILE.csv
 ```
 
-Alternatively:
+Alternatively if you have installed the project without Poetry:
 ```
 derdiedas_db -c PATH/TO/YOUR/CSV/FILE.csv
 ```

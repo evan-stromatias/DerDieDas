@@ -5,14 +5,14 @@ from kivy.uix.screenmanager import ScreenManager
 
 from der_die_das import ASSETS_ROOT_DIR_NAME
 from der_die_das.screens.main_menu_screen import MenuScreen
-from der_die_das.screens.noun_games_screen import NounGenderScreen, NounPluralScreen, NounTranslateScreen
+from der_die_das.screens.noun_games.gender_screen import NounGenderScreen
+from der_die_das.screens.noun_games.plural_screen import NounPluralScreen
+from der_die_das.screens.noun_games.translate_screen import NounTranslateScreen
 from der_die_das.screens.settings_screen import SettingsScreen
-from der_die_das.screens.stats_screen import (
-    StatsGenderScreen,
-    StatsPluralScreen,
-    StatsScreen,
-    StatsTranslationScreen,
-)
+from der_die_das.screens.stats.gender_screen import StatsGenderScreen
+from der_die_das.screens.stats.plural_screen import StatsPluralScreen
+from der_die_das.screens.stats.stats_screen import StatsScreen
+from der_die_das.screens.stats.translation_screen import StatsTranslationScreen
 
 LabelBase.register(DEFAULT_FONT, str(ASSETS_ROOT_DIR_NAME / "fonts" / "amatic" / "AmaticSC-Regular.ttf"))
 

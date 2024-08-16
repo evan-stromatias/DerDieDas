@@ -1,11 +1,12 @@
+"""The base class used by all Game Statistic Screens."""
+
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.uix.screenmanager import Screen
 from kivy.uix.widget import Widget
 
-from der_die_das.database.db_instance import db
 from der_die_das.database.db_fill_data import BaseDbModel
-from der_die_das.database.models import GermanNounsGenderStats, GermanNounsPluralStats, GermanNounsTranslationStats
+from der_die_das.database.db_instance import db
 
 
 class StatsNounBaseScreen(Screen):
@@ -73,19 +74,3 @@ class StatsNounBaseScreen(Screen):
         for _ in range(num):
             hor_box = self._create_widget()
             layout.add_widget(hor_box)
-
-
-class StatsScreen(Screen):
-    pass
-
-
-class StatsGenderScreen(StatsNounBaseScreen):
-    db_model = GermanNounsGenderStats
-
-
-class StatsPluralScreen(StatsNounBaseScreen):
-    db_model = GermanNounsPluralStats
-
-
-class StatsTranslationScreen(StatsNounBaseScreen):
-    db_model = GermanNounsTranslationStats
